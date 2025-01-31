@@ -26,9 +26,16 @@ Una volta pronta l'immagine il container viene eseguito con il comando `docker r
 
 [Docker Desktop](https://docs.docker.com/desktop/) e [Visual Studio Code](https://code.visualstudio.com/docs)(VSC) installati sul tuo PC.
 
-<mark>Note
+<mark>Il tutorial è pensato per essere usato su Windows, ma gran parte dei comandi rimangono i medesimianche su Linux.
 
 <span style="background-color: #ffeb3b">Highlighted text</span>
+
+!!! note
+    This is a note
+
+> **Note**
+> <mark>This is an important note
+
 
 ## Come Iniziare
 
@@ -129,7 +136,7 @@ docker rm tutorial
 docker pull vaultwarden/server:latest
 ```
 
-**NB**: il pull immagine è opzionale. L'immagine viene comunque scaricata in fase di esecuzione (run) se non già presente in locale.
+<mark>il pull immagine è opzionale. L'immagine viene comunque scaricata in fase di esecuzione (run) se non già presente in locale.
 
 - Esegui
 
