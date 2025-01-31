@@ -4,13 +4,13 @@
 
 [docker-tutorial](https://github.com/Longwave-innovation/docker-tutorial) è un Tutorial creato da Longwave che ti consente di familiarizzare con l'uso di [Container Docker](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/).
 
-Il tutorial ti guida nell'esecuzione delle principali funzioni Docker come la creazione e gestione delle immagine e l'esecuzione e gestione dei container.
+Il tutorial ti guida nell'esecuzione delle principali funzioni Docker come la creazione e la gestione delle immagine e l'esecuzione e la gestione dei container.
 
 A scopo dimostrativo il tutorial containerizza una semplice applicazione web, il cui codice sorgente e contenuto nel repository.
 
 ## Docker background
 
-[Docker](https://docs.docker.com/get-started/docker-overview/) è una piattaforma open-source che consente di pacchettizzare le applicazioni in container (cioè pacchetti software completamente autosufficienti) ed eseguirli su computer host.
+[Docker](https://docs.docker.com/get-started/docker-overview/) è una piattaforma open-source che consente di pacchettizzare le applicazioni in container (cioè pacchetti software completamente autosufficienti) ed eseguirli su un computer `host`.
 
 Una volta eseguito, il container diventa quindi un ambiente isolato e riproducibile su qualsiasi sistema host.
 
@@ -27,7 +27,7 @@ Una volta pronta l'immagine il container viene eseguito con il comando `docker r
 [Docker Desktop](https://docs.docker.com/desktop/) e [Visual Studio Code](https://code.visualstudio.com/docs)(VSC) installati sul tuo PC.
 
 > **Nota**
-> Il tutorial è pensato per essere usato su <mark>Windows, ma gran parte dei comandi rimangono i medesimianche su Linux
+> Il tutorial è pensato per essere usato su <mark>Windows</mark>, ma gran parte dei comandi rimangono i medesimianche su Linux
 
 
 ## Come Iniziare
@@ -183,4 +183,14 @@ docker logs vaultwarden
 ```bash
 docker stop vaultwarden
 docker rm vaultwarden
+```
+
+## Pulisci l'ambiente
+
+- Cancella le immagini
+
+```bash
+docker image rm docker-tutorial
+docker image rm docker-tutorial:1.0.0
+docker image rm vaultwarden/server
 ```
