@@ -194,3 +194,6 @@ docker image rm docker-tutorial
 docker image rm docker-tutorial:1.0.0
 docker image rm vaultwarden/server
 ```
+
+> **Nota**
+> Se non spefificato l'attributo `tag` dopo il nome immagine docker cancella l'immagine con `tag=latest`.
