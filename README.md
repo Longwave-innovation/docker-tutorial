@@ -2,7 +2,7 @@
 
 ## Intro
 
-[docker-tutorial](https://github.com/Longwave-innovation/docker-tutoriali) è un Tutorial creato da Longwave che ti consente di familiarizzare con l'uso di container Docker.
+[docker-tutorial](https://github.com/Longwave-innovation/docker-tutorial) è un Tutorial creato da Longwave che ti consente di familiarizzare con l'uso di [Container Docker](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/).
 
 Il tutorial ti guida nell'esecuzione delle principali funzioni Docker come la creazione e gestione delle immagine e l'esecuzione e gestione dei container.
 
@@ -10,9 +10,9 @@ A scopo dimostrativo il tutorial containerizza una semplice applicazione web, il
 
 ## Docker background
 
-Docker è una piattaforma open-source che consente di pacchettizzare le applicazioni in container (cioè pacchetti software completamente autosufficienti) ed eseguirli su computer host.
+[Docker](https://docs.docker.com/get-started/docker-overview/) è una piattaforma open-source che consente di pacchettizzare le applicazioni in container (cioè pacchetti software completamente autosufficienti) ed eseguirli su computer host.
 
-Una volta eseguito ogni container diventa quindi un ambiente isolati e riproducibile su qualsiasi sistema host.
+Una volta eseguito, il container diventa quindi un ambiente isolato e riproducibile su qualsiasi sistema host.
 
 Il pacchetto software, chiamato `immagine`, è leggero, autonomo e include tutto il necessario per eseguite l'applicazione e cioè: codice sorgente, runtime, librerie, variabili d'ambiente e file di configurazione. Le immagini Docker sono create a partire da un file chiamato `Dockerfile`, che contiene una serie di istruzioni su come costruire l'immagine.
 
@@ -25,7 +25,11 @@ Una volta pronta l'immagine il container viene eseguito con il comando `docker r
 ## Prerequisiti
 
 [Docker Desktop](https://docs.docker.com/desktop/) e [Visual Studio Code](https://code.visualstudio.com/docs)(VSC) installati sul tuo PC.
-  
+
+<mark>Note
+
+<span style="background-color: #ffeb3b">Highlighted text</span>
+
 ## Come Iniziare
 
 - Apri VSC e clona il repository dal terminale con il comando
