@@ -211,4 +211,4 @@ docker image rm vaultwarden/server
 ```
 
 > **Nota**
-> Se non spefificato l'attributo `tag` dopo il nome immagine docker cancella l'immagine con `tag=latest`.
+> Se non specificato l'attributo `tag` dopo il nome immagine docker cancella l'immagine con `tag=latest`.
