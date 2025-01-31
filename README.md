@@ -24,44 +24,61 @@ git clone https://github.com/Longwave-innovation/docker-tutorial.git
 - Esplorare il codice del repository
   - `dockerfile`
   - `index.html`
-- Creare la nostra prima immagine Docker
+
+## Creiamo la nostra prima applicazione
+
+- Creiamo l'immagine Docker
 
 ```bash
 docker build -t docker-tutorial .
 ```
 
-- Eseguire un container con l'immagine appena creata
+- Verifichiamo lo stato dell'immagine
 
 ```bash
-docker container run --detach -p 80:80 docker-turorial`
+docker images
 ```
 
-- Verificare lo stato del container
+- Eseguiamo un container con l'immagine
+
+```bash
+docker run --detach --name tutorial -p 80:80 docker-tutorial
+```
+
+- Verifichiamo lo stato del container
 
 ```bash
 docker ps
 ```
 
-- Aprire un web brower sul proprio PC ed accedere all'indirizzo `http://localhost:80`
+- rispondiamo alle seguenti domande:
+  - come si chiama il container?
+  - che immagine usa?
+  - su che porta è esposto sull'host?
+  
+- Accediamo all'applicazione `http://localhost:80`
 
-- Fermare e rimuovere il container
+## Modifichiamo l'applicazione e rilasciamo una nuova versione
 
-```bash
-docker stop docker-tutorial
-docker rm docker-tutorial
-```
+- Cambiamo l'aspetto della pagina web modificando alcuni parametri del file `index.html` (es: logo docker ed il colore dello sfondo di una sezione)
 
-- Modificare il logo della pagina con l'immagine `https://www.longwave.it/wp-content/uploads/2024/12/logo-longwave-2025.png`
-
-- Creare una nuova immagine versionata
+- Creiamo una nuova immagine versionata
 
 ```bash
 docker build -t docker-tutorial:1.0.0 .
 ```
 
-- Eseguire un container con l'immagine appena creata (v1.0.0)
+- Fermiamo il container e lo cancelliamo
+
 ```bash
-docker container run --detach -p 80:80 docker-tutorial:1.0.0`
+docker stop tutorial
+docker rm tutorial
 ```
 
-`https://www.longwave.it/wp-content/uploads/2024/12/logo-longwave-2025.png`
+- Eseguiamo un container con l'immagine appena creata (v1.0.0) esponendolo sulla porta `81`dell'host
+
+```bash
+docker run --detach --name tutorial -p 81:80 docker-tutorial:1.0.0
+```
+
+- Accediamo all'applicazione `http://localhost:81`
