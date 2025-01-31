@@ -57,19 +57,25 @@ docker build -t docker-tutorial .
 docker images
 ```
 
+> **Nota**
+> L'attributo `tag` si utilizza per specificare la versione dell'immagine. Se non specificato nel comando di build viene impostato con valore `latest`.
+
 - Esegui un container con la tua immagine
 
 ```bash
 docker run --detach --name tutorial -p 80:80 docker-tutorial
 ```
 
-- Verifica lo stato del container
+> **Nota**
+> Se non spefificato l'attributo `tag` dopo il nome immagine (quindi la versione), docker utilizza l'immagine con `tag=latest`.
+
+- Controlla lo stato del container
 
 ```bash
 docker ps
 ```
 
-- prova a rispondere alle seguenti domande:
+- Prova a rispondere alle seguenti domande:
   - come si chiama il container?
   - che immagine usa?
   - su che porta è esposto sull'host?
@@ -82,34 +88,60 @@ docker ps
 docker exec -it tutorial ls -al /usr/share/nginx/html
 ```
 
-- Accedi direttamente alla shell del container ed esegui il medesimo comando dall'interno
+- Accedi direttamente alla shell del container
 
 ```bash
 docker exec -it tutorial /bin/bash
+```
+
+- Poi esegui questi comandi
+
+```bash
+# Visualizza il contenuto della folder con il codice sorgente html direttamente dall'interno del container
 ls -al /usr/share/nginx/html
+# OS
+# Controlla la distibuzione Linux
+cat /etc/os-release
+# Controlla la versione di Kernel Linux
+uname -a
 ```
 
 ## Modifica l'applicazione e rilascia una nuova versione
 
 - Cambia l'aspetto della pagina web modificando alcuni parametri del file `index.html` (es: logo docker ed il colore dello sfondo di una sezione)
 
-- Crea una nuova immagine versionata
+- Crea una nuova immagine questa volta però versionata, specificando anche il `tag`
 
 ```bash
 docker build -t docker-tutorial:1.0.0 .
 ```
 
-- Ferma il container e poi rimuovilo dal tuo desktop
+- Verifica lo stato dell'immagine
+
+```bash
+docker images
+```
+
+> **Nota**
+> Le immagini `docker-tutorial` ora sono due, ma con tag differenti.
+
+- Per aggiornare l'immagine dovrai necessariamente eseguire un nuovo container, quello in esecuzione è immutabile quindi fermalo e rimuovilo
 
 ```bash
 docker stop tutorial
 docker rm tutorial
 ```
 
-- Esegui un container con l'immagine appena creata (v1.0.0) esponendolo sulla porta `81`dell'host
+- Esegui nuovamente il container con l'immagine appena creata (v1.0.0) esponendolo questa volta sulla porta `81` dell'host
 
 ```bash
 docker run --detach --name tutorial -p 81:80 docker-tutorial:1.0.0
+```
+
+- Controlla lo stato del container
+
+```bash
+docker ps
 ```
 
 - Accedi all'applicazione <http://localhost:81>
@@ -123,7 +155,7 @@ docker rm tutorial
 
 ## Esegui un applicazione di terze parti (Vaultwarden)
 
-- Scarica l'immagine più recente dal registry publico [Dockerhub](https://hub.docker.com/) e la copia in locale
+- Scarica l'immagine più recente di [Vaultwarden](https://github.com/dani-garcia/vaultwarden) dal registry publico [Dockerhub](https://hub.docker.com/) e copiala in locale
 
 ```bash
 docker pull vaultwarden/server:latest
@@ -132,13 +164,19 @@ docker pull vaultwarden/server:latest
 > **Nota**
 > il pull immagine è opzionale. L'immagine viene comunque scaricata in fase di esecuzione (run) se non già presente in locale.
 
-- Esegui
+- Esegui il container con l'immagine appena scaricata `vaultwarden/server
 
 ```bash
 docker run -d --name vaultwarden -v ${PWD}/appdata/vw:/data/ -p 8080:80 vaultwarden/server:latest
 ```
 
 - Accedi a Vaultwarden <http://localhost:8080>
+
+- Controlla gli eventi emessi dall'applicazione
+
+```bash
+docker logs vaultwarden
+```
 
 - Ferma il container e poi rimuovilo dal tuo desktop
 
