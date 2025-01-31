@@ -33,7 +33,7 @@ docker build -t docker-tutorial .
 - Eseguire un container con l'immagine appena creata
 
 ```bash
-docker container run --detach -p 80:80 docker-demo`
+docker container run --detach -p 80:80 docker-turorial`
 ```
 
 - Verificare lo stato del container
@@ -47,8 +47,8 @@ docker ps
 - Fermare e rimuovere il container
 
 ```bash
-docker stop docker-demo
-docker rm docker-demo
+docker stop docker-tutorial
+docker rm docker-tutorial
 ```
 
 - Modificare il logo della pagina con l'immagine `https://www.longwave.it/wp-content/uploads/2024/12/logo-longwave-2025.png`
@@ -56,12 +56,12 @@ docker rm docker-demo
 - Creare una nuova immagine versionata
 
 ```bash
-docker build -t docker-demo:1.0.0 .
+docker build -t docker-tutorial:1.0.0 .
 ```
 
 - Eseguire un container con l'immagine appena creata (v1.0.0)
 ```bash
-docker container run --detach -p 80:80 docker-demo:1.0.0`
+docker container run --detach -p 80:80 docker-tutorial:1.0.0`
 ```
 
 `https://www.longwave.it/wp-content/uploads/2024/12/logo-longwave-2025.png`
