@@ -2,9 +2,11 @@
 
 ## Intro
 
-[docker-demo](https://github.com/Longwave-innovation/docker-demo) è un Tutorial per sperimentare la creazione e l'esecuzione di un container Docker.
+[docker-tutorial](https://github.com/Longwave-innovation/docker-tutoriali) è un Tutorial creato da Longwave per sperimentare l'utilizzo di container Docker.
 
-L'applicazione all'interno del container pubblica una semplice pagina web.
+Il tutorial guida lo studente nell'esecuzione delle principali funzioni Docker come la creazione e gestione delle immagine e l'esecuzione e gestione dei container.
+
+A scopo dimostratico il tutorial utilizza una semplice applicazione web, il cui codice sorgente e contenuto nel repository.
 
 ## Prerequisiti
 
@@ -15,7 +17,7 @@ L'applicazione all'interno del container pubblica una semplice pagina web.
 - Aprire l'ambiente di sviluppo [Visual Studio Code](https://code.visualstudio.com/docs)(VSC) e clonare il repository dal terminale con il comando
 
 ```bash
-git clone https://github.com/Longwave-innovation/docker-demo.git
+git clone https://github.com/Longwave-innovation/docker-tutorial.git
 ```
 
 - [Aprire](https://youtu.be/u3PMR8voOo0?si=GVIacqOljEiOKI_4) la folder del repository in uno spazio di lavoro VSC
@@ -25,7 +27,7 @@ git clone https://github.com/Longwave-innovation/docker-demo.git
 - Creare la nostra prima immagine Docker
 
 ```bash
-docker build -t docker-demo .
+docker build -t docker-tutorial .
 ```
 
 - Eseguire un container con l'immagine appena creata
