@@ -96,15 +96,30 @@ docker exec -it tutorial /bin/bash
 
 - Poi esegui questi comandi
 
-```bash
-# Visualizza il contenuto della folder con il codice sorgente html direttamente dall'interno del container
-ls -al /usr/share/nginx/html
-# OS
-# Controlla la distibuzione Linux
-cat /etc/os-release
-# Controlla la versione di Kernel Linux
-uname -a
-```
+  ```bash
+  # Visualizza il contenuto della folder con il codice sorgente html direttamente dall'interno del container
+  ls -al /usr/share/nginx/html
+  ```
+
+  Controlla la distribuzione Linux
+
+  ```bash
+  cat /etc/os-release
+  ```
+
+  > **Nota**
+  > La distribuzione è quella contenuta nell'OS del immagine base (nginx).
+
+  Controlla la versione di Kernel Linux
+
+  ```bash
+  uname -a
+  ```
+  
+  > **Nota**
+  > Il kernel è invece quello del sistema host (Windows WSL)
+
+  Esci dalla shell con `CTRL-D`
 
 ## Modifica l'applicazione e rilascia una nuova versione
 
