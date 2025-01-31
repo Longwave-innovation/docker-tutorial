@@ -2,7 +2,7 @@
 
 ## Intro
 
-[docker-tutorial](https://github.com/Longwave-innovation/docker-tutorial) è un Tutorial creato da Longwave che ti consente di familiarizzare con l'uso di [Container Docker](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/).
+[docker-tutorial](https://github.com/Longwave-innovation/docker-tutorial) è una guida creata da Longwave che ti consente di familiarizzare con l'uso di [container](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/) Docker.
 
 Il tutorial ti guida nell'esecuzione delle principali funzioni Docker come la creazione e la gestione delle immagine e l'esecuzione e la gestione dei container.
 
@@ -14,20 +14,20 @@ A scopo dimostrativo il tutorial containerizza una semplice applicazione web, il
 
 Una volta eseguito, il container diventa quindi un ambiente isolato e riproducibile su qualsiasi sistema host.
 
-Il pacchetto software, chiamato `immagine`, è leggero, autonomo e include tutto il necessario per eseguite l'applicazione e cioè: codice sorgente, runtime, librerie, variabili d'ambiente e file di configurazione. Le immagini Docker sono create a partire da un file chiamato `Dockerfile`, che contiene una serie di istruzioni su come costruire l'immagine.
+Il pacchetto software, chiamato `immagine`, è leggero, autonomo e include tutto il necessario per eseguire l'applicazione e cioè: codice sorgente, runtime, librerie, variabili d'ambiente e file di configurazione. Le immagini Docker sono create a partire da un file chiamato `Dockerfile`, che contiene una serie di istruzioni su come costruire l'immagine.
 
 Il `Dockerfile` viene di norma posizionato nella folder `root` del repository dove viene conservato il codice sorgente.
 
-L'immagine viene creata con il comando `docker build` eseguito generalmente direttamente nella folder dove risiede il `Dockerfile`.
+L'immagine viene creata con il comando `docker build` eseguito generalmente nella folder dove risiede il `Dockerfile`.
 
 Una volta pronta l'immagine il container viene eseguito con il comando `docker run`.
 
 ## Prerequisiti
 
-[Docker Desktop](https://docs.docker.com/desktop/) e [Visual Studio Code](https://code.visualstudio.com/docs)(VSC) installati sul tuo PC.
+[Docker Desktop](https://docs.docker.com/desktop/) e [Visual Studio Code](https://code.visualstudio.com/docs) (VSC) installati sul tuo PC.
 
 > **Nota**
-> Il tutorial è pensato per essere usato su <mark>Windows</mark>, ma gran parte dei comandi rimangono i medesimianche su Linux
+> Sebbene il tutorial sia pensato per essere usato su <mark>Windows</mark>, gran parte dei comandi sono comunque replicabili anche su Linux.
 
 ## Come Iniziare
 
@@ -38,7 +38,7 @@ git clone https://github.com/Longwave-innovation/docker-tutorial.git
 ```
 
 - [Aggiungi](https://youtu.be/u3PMR8voOo0?si=GVIacqOljEiOKI_4) la folder del repository nel tuo spazio di lavoro VSC,
-- Esplora questi due files in cui è contenuto il codice sorgente:
+- Esplora il contenuto dei due files ch contengono il codice sorgente:
   - `dockerfile`
   - `index.html`
 
@@ -57,7 +57,7 @@ docker images
 ```
 
 > **Nota**
-> L'attributo `tag` si utilizza per specificare la versione dell'immagine. Se non specificato nel comando di build viene impostato con valore `latest`.
+> L'attributo `tag` si utilizza per specificare la versione dell'immagine. Se non specificato nel comando di build il tag viene impostato con valore `latest`.
 
 - Esegui un container con la tua immagine,
 
@@ -77,7 +77,7 @@ docker ps
 - Prova a rispondere alle seguenti domande:
   - come si chiama il container?
   - che immagine usa?
-  - su che porta è esposto sull'host?
+  - su che porta dell'host è esposto?
   
 - Accedi all'applicazione <http://localhost>
 
@@ -211,4 +211,4 @@ docker image rm vaultwarden/server
 ```
 
 > **Nota**
-> Se non specificato l'attributo `tag` dopo il nome immagine docker cancella l'immagine con `tag=latest`.
+> Se non specificato l'attributo `tag` dopo il nome immagine Docker cancella l'immagine con `tag=latest`.
